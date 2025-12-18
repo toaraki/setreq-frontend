@@ -1,5 +1,6 @@
 FROM registry.redhat.io/ubi9/nginx-122
 COPY ./index.html /opt/app-root/src/index.html
+COPY ./nginx-cfg/revporxy.conf /etc/nginx/conf.d/.
 USER root
 RUN chown -R 1001:0 /opt/app-root/src/index.html
 USER 1001

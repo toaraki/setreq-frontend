@@ -37,7 +37,8 @@
 
         async function fetchRequests() {
             try {
-                const response = await fetch(API_BASE_URL + '/requests');
+                // const response = await fetch(API_BASE_URL + '/requests'); 
+                const response = await fetch('/api/requests');
                 if (!response.ok) throw new Error('APIから無効な応答');
                 
                 const requests = await response.json();
@@ -76,7 +77,8 @@
             };
 
             try {
-                const response = await fetch(API_BASE_URL + '/requests', {
+                //const response = await fetch(API_BASE_URL + '/requests', {
+                const response = await fetch('/api/requests', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
